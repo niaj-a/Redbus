@@ -21,24 +21,40 @@ This repository contains a front-end demonstration and documentation for a bus t
 
 ## ReadME — How to run the project
 
-There are two ways to run or review this project:
+How I ran the project locally (what I did) (Markdown)
+## How I ran the project locally (what I did)
 
-### A) Quick demo (no build tools) — open the static demo front-end
+> Note: I used a publicly available redBus-style example as the learning source. The instructions below describe how I ran the example project locally for testing and for recording the demo video.
 
-1. From your local copy of this repository, open:
+1. Clone the example repository (original project source):
+```bash
+git clone https://github.com/nitansh11/redbus.git
+cd redbus
 
-index.html
+Install dependencies for both front-end and back-end:
 
-using a browser (double-click or right-click → Open with → Browser).
+# in one terminal (frontend)
+cd front-end-redbus
+npm install
 
-2. Or run a local static server (recommended for consistent behaviour):
-- If you have Python installed:
-  ```powershell
-  python -m http.server 8000
-  ```
-  and open `http://localhost:8000` in your browser.
-- Or use VS Code Live Server:
-  - Open repository in VS Code → right-click `index.html` → Open with Live Server.
+# in a separate terminal (backend)
+cd ../back-end-redbus
+npm install
 
-3. The static demo will show the front-end flows (search, list, seat selection, booking interactions). 
+Create a local .env file for the back-end (based on .env.example) and set required variables such as MONGO_URI and Stripe test keys. Do not commit secrets.
 
+Start the back-end server (Express):
+
+cd back-end-redbus
+npm start
+
+Start the front-end (React dev server):
+
+cd ../front-end-redbus
+npm start
+
+Open a browser at:
+
+http://localhost:3000
+
+and test the flows (search → view buses → seat selection → booking)
